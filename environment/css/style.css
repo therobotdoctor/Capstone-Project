@@ -1,0 +1,739 @@
+/****** HEADER *******/
+
+#header {
+    background-color: #29333F;
+    width: 100%;
+    height: 50px;
+}
+
+#logo {
+    height: 120px;
+    display: block;
+    padding: 10px 5px 0px 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+#cars-banner {
+    height: 250px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding-left: 12%;
+}
+
+#logo-banner {
+    background-color: #ffffff;
+    height: 120px;
+    width: 100%;
+}
+
+
+/****** HEADER -- NAVIGATION *******/
+
+.main_navigation {
+    text-align: center;
+    font-size: 18px;
+    padding-top: 10px;
+    font-family: 'Ubuntu', sans-serif, monospace;
+}
+
+li {
+    display: inline;
+    list-style: none;
+}
+
+/******* CALL TO ACTION BUTTONS -- NAVIGATION********/
+
+.btn {
+    float: right;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+
+#btnreg {
+    float: right;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+
+#btnsign {
+    float: right;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.bttn-default {
+    color: #fff;
+}
+
+.bttn-primary,
+.bttn,
+.bttn-lg,
+.bttn-md,
+.bttn-sm,
+.bttn-xs {
+    color: #13ADEF;
+}
+
+.bttn-warning {
+    color: #feab3a;
+}
+
+.bttn-danger {
+    color: #ff5964;
+}
+
+.bttn-success {
+    color: #28b78d;
+}
+
+.bttn-royal {
+    color: #bd2df5;
+}
+
+.bttn,
+.bttn-lg,
+.bttn-md,
+.bttn-sm,
+.bttn-xs {
+    margin: 0;
+    padding: 0;
+    border-width: 0;
+    border-color: transparent;
+    background: transparent;
+    font-weight: 400;
+    cursor: pointer;
+    position: relative;
+}
+
+.bttn-lg {
+    padding: 8px 15px;
+    font-size: 24px;
+    font-family: inherit;
+}
+
+.bttn-md {
+    font-size: 20px;
+    font-family: inherit;
+    padding: 5px 12px;
+}
+
+.bttn-sm {
+    padding: 4px 10px;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+.bttn-xs {
+    padding: 3px 8px;
+    font-size: 12px;
+    font-family: inherit;
+}
+
+.bttn-material-flat {
+    margin: 0;
+    padding: 0;
+    border-width: 0;
+    border-color: transparent;
+    background: transparent;
+    font-weight: 400;
+    cursor: pointer;
+    position: relative;
+    font-size: 20px;
+    font-family: inherit;
+    padding: 5px 12px;
+    overflow: hidden;
+    border-width: 0;
+    border-radius: 2px;
+    background: #fff;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.18), 0 1px 5px 0 rgba(0, 0, 0, 0.15);
+    color: #1d89ff;
+    text-transform: uppercase;
+    -webkit-transition: all 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
+    transition: all 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.bttn-material-flat:hover,
+.bttn-material-flat:focus {
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+    -webkit-transition: box-shadow 0.4s ease-out;
+    transition: box-shadow 0.4s ease-out;
+}
+
+.bttn-material-flat.bttn-xs {
+    padding: 3px 8px;
+    font-size: 12px;
+    font-family: inherit;
+}
+
+.bttn-material-flat.bttn-sm {
+    padding: 4px 10px;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+.bttn-material-flat.bttn-md {
+    font-size: 15px;
+    font-family: inherit;
+    padding: 5px 12px;
+}
+
+.bttn-material-flat.bttn-lg {
+    padding: 8px 15px;
+    font-size: 24px;
+    font-family: inherit;
+}
+
+.bttn-material-flat.bttn-default {
+    background: #fff;
+    color: #13ADEF;
+}
+
+.bttn-material-flat.bttn-primary {
+
+    background: #13ADEF;
+    color: #fff;
+}
+
+.bttn-material-flat.bttn-warning {
+    background: #feab3a;
+    color: #fff;
+}
+
+.bttn-material-flat.bttn-danger {
+    background: #ff5964;
+    color: #fff;
+}
+
+.bttn-material-flat.bttn-success {
+    background: #28b78d;
+    color: #fff;
+}
+
+.bttn-material-flat.bttn-royal {
+    background: #bd2df5;
+    color: #fff;
+}
+
+#faq {
+    text-decoration: none;
+    color: #13ADEF;
+
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+a:hover {
+    color: #13ADEF;
+}
+
+
+p {
+    color: #6A737E;
+    margin-left: 30px;
+}
+
+#signin {
+    padding: 20px;
+}
+
+
+/******** END OF NAVMENU **********/
+
+/******* BODY ********/
+
+body {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    font-family: 'Ubuntu', sans-serif, monospace;
+
+}
+
+main {
+    font-family: 'Ubuntu', sans-serif, monospace;
+    padding: 20px;
+    margin-bottom: 7%;
+}
+
+main h2 {
+    position: static;
+    text-align: center;
+    font-size: 40px;
+}
+
+
+
+/********** CARS LIST ***********/
+
+#car1,
+#car2,
+#car3,
+#car4 {
+    float: left;
+    width: 50%;
+}
+
+
+.carscontainer {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 10px;
+}
+
+/* Create two columns that float next to each other */
+
+.column {
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+    padding: 20px;
+    text-align: left;
+}
+
+/* Clear floats after the columns */
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#car-features {
+    font-size: 20px;
+
+}
+
+/************ ACCOUNT PAGE *************/
+
+/* Style the tab */
+
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #29333F;
+}
+
+/* Style the buttons that are used to open the tab content */
+
+.tab button {
+    overflow: hidden;
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+    width: 20%;
+}
+
+
+/* Change background color of buttons on hover */
+
+.tab button:hover {
+    background-color: #13ADEF;
+}
+
+/* Create an active/current tablink class */
+
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    max-width: 100%;
+    max-height: 100%;
+
+}
+
+.tabcontent {
+    animation: fadeEffect 1s;
+    /* Fading effect takes 1 second */
+}
+
+/* Go from zero to full opacity */
+
+@keyframes fadeEffect {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+
+/********** BOOKING Page ***********/
+
+.month {
+    padding: 70px 25px;
+    width: 100%;
+    background: #29333F;
+    text-align: center;
+}
+
+/* Month list */
+
+.month ul {
+    margin: 0;
+    padding: 0;
+}
+
+.month ul li {
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* Previous button inside month header */
+
+.month .prev {
+    float: left;
+    padding-top: 10px;
+}
+
+/* Next button */
+
+.month .next {
+    float: right;
+    padding-top: 10px;
+}
+
+/* Weekdays (Mon-Sun) */
+
+.weekdays {
+    margin: 0;
+    padding: 10px 0;
+    background-color: #ddd;
+}
+
+.weekdays li {
+    display: inline-block;
+    width: 13.6%;
+    color: #666;
+    text-align: center;
+}
+
+/* Days (1-31) */
+
+.days {
+    padding: 10px 0;
+    background: #eee;
+    margin: 0;
+}
+
+.days li {
+    list-style-type: none;
+    display: inline-block;
+    width: 13.6%;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 12px;
+    color: #777;
+}
+
+/* Highlight the "current" day */
+
+.days li :hover {
+    padding: 5px;
+    background: #29333F;
+    color: white !important
+}
+
+
+
+form #makeBoooking {
+    width: 50%;
+}
+
+/********** CONTACT Page ***********/
+
+/* Style inputs with type="text", select elements and textareas */
+
+input #fname#lname,
+select,
+textarea {
+    width: 100%;
+    /* Full width */
+    padding: 12px;
+    /* Some padding */
+    border: 1px solid #ccc;
+    /* Gray border */
+    border-radius: 4px;
+    /* Rounded borders */
+    box-sizing: border-box;
+    /* Make sure that padding and width stays in place */
+    margin-top: 6px;
+    /* Add a top margin */
+    margin-bottom: 16px;
+    /* Bottom margin */
+    resize: vertical/* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+
+input[type=submit] {
+    background-color: #13ADEF;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker blue color */
+
+input[type=submit]:hover {
+    background-color: #29333F;
+}
+
+/* Add a background color and some padding around the form */
+
+.contactcontainer {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+
+/****** REGISTRATION FORM ********/
+
+* {
+    box-sizing: border-box;
+}
+
+/* Full-width input fields */
+
+input[type=text],
+input[type=password],
+input[type=email] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+/* Add a background color when the inputs get focus */
+
+input[type=text]:focus,
+input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Set a style for all buttons */
+
+button {
+    background-color: #13adef;
+    font-family: inherit;
+    font-size: 18px;
+    color: #fff;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+button:hover {
+    opacity: 1;
+}
+
+/* Extra styles for the cancel button */
+
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+
+.signupbtn {
+    width: 50%;
+}
+
+/* Add padding to container elements */
+
+.container {
+    padding: 16px;
+}
+
+/* The Modal (background) */
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: #474e5d;
+
+}
+
+/* Modal Content/Box */
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto;
+    /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 30%;
+    /* Could be more or less, depending on screen size */
+}
+
+/* Style the horizontal ruler */
+
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+/* The Close Button (x) */
+
+.close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+    color: #f44336;
+    cursor: pointer;
+}
+
+/* Clear floats */
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+
+@media screen and (max-width: 300px) {
+    .cancelbtn,
+    .signupbtn {
+        width: 100%;
+    }
+}
+
+
+/******** FAQ page **********/
+
+.faq-content {
+    text-align: center;
+    position: relative;
+    padding-bottom: 50px;
+}
+
+button.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 60%;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-family: 'Ubuntu', sans-serif monospace;
+    font-size: 20px;
+    transition: 0.4s;
+    margin: 0px 270px 0px 270px;
+}
+
+button.accordion.active,
+button.accordion:hover {
+    background-color: #ddd;
+}
+
+button.accordion:after {
+    content: '\02795';
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+}
+
+button.accordion.active:after {
+    content: "\2796";
+}
+
+.panel {
+    padding: 28px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.3s ease-in-out;
+    opacity: 0;
+    font-size: 16px;
+    width: 50%;
+    text-align: center;
+}
+
+
+.panel.show {
+    opacity: 1;
+    max-height: 500px;
+    margin: 0px 270px 0px 270px;
+    text-align: center;
+}
+
+
+/****** GOOGLE MAPS *******/
+
+#map {
+    height: 300px;
+    width: 100%;
+    display: block;
+    margin-bottom: 50px;
+}
+
+
+
+/****** FOOTER *******/
+
+#footer {
+    position: fixed;
+    padding-top: 10px;
+    bottom: 0%;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    background-color: #29333F;
+}
