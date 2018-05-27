@@ -84,7 +84,7 @@
                             loadMapData(map);
                         }
                     </script>
-                    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8OtHsqDm-Xi4aOMcTh90M58PUY0zlJc8&callback=initMap">
+                    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR GOOGLE MAPS API KEY&callback=initMap">
                     </script>
                     <!-----The script to interface with DB------->
                     <script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script>

@@ -220,7 +220,7 @@
                         </div>
                         <!-- Map for entering lat/long if I can work out how to retrive value
                         <div id="map" ></div>
-                        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8OtHsqDm-Xi4aOMcTh90M58PUY0zlJc8&callback=initMap"></script>
+                        <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR GOOGLE MAPS API KEY&callback=initMap"></script>
                         <script type="text/javascript">
                         function initMap() {
                             var rmit = { lat: -37.807, lng: 144.963 };
