@@ -2,8 +2,8 @@
 
     require 'aws/aws.phar';
     
-    putenv("AWS_ACCESS_KEY_ID=AKIAIAGHSUW7LN42DWBQ");
-    putenv("AWS_SECRET_ACCESS_KEY=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");
+    putenv("AWS_ACCESS_KEY_ID=INSERT KEY HERE");
+    putenv("AWS_SECRET_ACCESS_KEY=SECRET KEY");
     
     
     date_default_timezone_set('UTC');
@@ -16,8 +16,8 @@
         'region'   => 'us-west-2',
         'version'  => 'latest',
         'credentials' => [
-            'key'    => 'AKIAIAGHSUW7LN42DWBQ',
-            'secret' => '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',
+            'key'    => 'INSERT KEY HERE',
+            'secret' => 'SECRET KEY',
         ],
     ]);
     

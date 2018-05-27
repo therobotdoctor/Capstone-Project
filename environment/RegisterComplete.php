@@ -20,8 +20,8 @@
         'region'   => 'us-west-2',
         'version'  => 'latest',
         'credentials' => [
-            'key'    => 'AKIAIAGHSUW7LN42DWBQ',
-            'secret' => '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',
+            'key'    => 'INSERT KEY HERE',
+            'secret' => 'SECRET KEY',
         ],
     ]);
     

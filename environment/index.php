@@ -126,11 +126,11 @@
                     endpoint: 'dynamodb.us-west-2.amazonaws.com',
                     // accessKeyId default can be used while using the downloadable version of DynamoDB. 
                     // For security reasons, do not store AWS Credentials in your files. Use Amazon Cognito instead.
-                    accessKeyId: "AKIAIAGHSUW7LN42DWBQ",
+                    accessKeyId: "INSERT KEY HERE",
                     // secretAccessKey default can be used while using the downloadable version of DynamoDB. 
                     // For security reasons, do not store AWS Credentials in your files. Use Amazon Cognito instead.
                     // Temp measure to build test functionality
-                    secretAccessKey: "QTTxPX3LuSjjSVFcM5PVSasdQC6oNj2g+BK3Demr"
+                    secretAccessKey: "SECRET KEY"
                 });
                 var docClient = new AWS.DynamoDB.DocumentClient();
 
