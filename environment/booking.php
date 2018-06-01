@@ -90,113 +90,21 @@
         <script type="text/javascript">
             function setDate(date){
                         document.getElementById("dateToBook").value = date;
-                        //document.getElementById("dateForm").submit();
+                        
                     }
                         
         </script>
 
     </form>
-        <!--
-      <li><a href="bookdetails.php" style="color: #777">1</a></li>
-      <li><a href="bookdetails.php" style="color: #777">2</li>
-      <li><a href="bookdetails.php" style="color: #777">3</li>
-      <li><a href="bookdetails.php" style="color: #777">4</a></span></li>
-      <li><a href="bookdetails.php" style="color: #777">5</li>
-      <li><a href="bookdetails.php" style="color: #777">6</li>
-      <li><a href="bookdetails.php" style="color: #777">7</li>
-      <li><a href="bookdetails.php" style="color: #777">8</li>
-      <li><a href="bookdetails.php" style="color: #777">9</li>
-      <li><a href="bookdetails.php" style="color: #777">10</li>
-      <li><a href="bookdetails.php" style="color: #777">11</li>
-      <li><a href="bookdetails.php" style="color: #777">12</li>
-      <li><a href="bookdetails.php" style="color: #777">13</li>
-      <li><a href="bookdetails.php" style="color: #777">14</li>
-      <li><a href="bookdetails.php" style="color: #777">15</li>
-      <li><a href="bookdetails.php" style="color: #777">16</li>
-      <li><a href="bookdetails.php" style="color: #777">17</li>
-      <li><a href="bookdetails.php" style="color: #777">18</li>
-      <li><a href="bookdetails.php" style="color: #777">19</li>
-      <li><a href="bookdetails.php" style="color: #777">20</li>
-      <li><a href="bookdetails.php" style="color: #777">21</li>
-      <li><a href="bookdetails.php" style="color: #777">22</li>
-      <li><a href="bookdetails.php" style="color: #777">23</li>
-      <li><a href="bookdetails.php" style="color: #777">24</li>
-      <li><a href="bookdetails.php" style="color: #777">25</li>
-      <li><a href="bookdetails.php" style="color: #777">26</li>
-      <li><a href="bookdetails.php" style="color: #777">27</li>
-      <li><a href="bookdetails.php" style="color: #777">28</li>
-      <li><a href="bookdetails.php" style="color: #777">29</li>
-      <li><a href="bookdetails.php" style="color: #777">30</li>
-      <li><a href="bookdetails.php" style="color: #777">31</li>
-      -->
+        
     </ul>
 
     </main>
 
     <?php include 'register.php'; ?>
-    <!-- The Modal (contains the Sign Up form)
-    <div id="id01" class="modal">
-        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">X</span>
-        <form class="modal-content" action="/action_page.php">
-            <div class="container">
-                <h1 align='center'>Registration</h1>
-                <p align='center'>Please fill in this form to create an account.</p>
-                <hr>
-                <label for="email"><b>Email</b></label>
-                <input type="text" placeholder="Enter Email" name="email" required>
-
-                <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
-
-                <label for="psw-repeat"><b>Repeat Password</b></label>
-                <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-
-                <label>
-        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-                </label>
-                <hr>
-
-                <p style="font-size:12px">By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
-
-                <div class="clearfix">
-                    <button type="submit" class="signup">Sign Up</button>
-                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-                </div>
-            </div>
-        </form>
-    </div>
-     -->
-
+    
     <? php include 'login.php'; ?>
-    <!-- The Modal (contains the Sign In Form 
-    <div id="id02" class="modal">
-        <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">X</span>
-        <form class="modal-content" action="/action_page.php">
-            <div class="container">
-                <h1 align='center'>Sign In</h1>
-                <hr>
-                <label for="email"><b>Email</b></label>
-                <input type="text" placeholder="Enter Email" name="email" required>
-
-                <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
-
-                <label>
-        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-                </label>
-
-                <p align="center" style="font-size:15px">Forgot<a href="forgotpassword.html" style="color:dodgerblue"> Password?</a></p>
-                <hr>
-                <div class="clearfix">
-                    <button type="submit" class="signin">Submit</button>
-                    <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
-                </div>
-            </div>
-        </form>
-    </div>
-    -->
-
-
+    
 </body>
 
 

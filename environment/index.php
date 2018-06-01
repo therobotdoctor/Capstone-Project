@@ -54,8 +54,7 @@
             function initMap() {
                 var rmit = { lat: -37.807, lng: 144.963 };
                 var map = new google.maps.Map(document.getElementById('map'), {
-                    //zoom: 15,
-                    //center: rmit
+                    
                 });
                 
                 
@@ -65,7 +64,7 @@
                 markerUser = new google.maps.Marker;
                 infoWindowUser = new google.maps.InfoWindow;
           
-                
+                //try obtain users location, will not work without permission
                 if (navigator.geolocation) {
                         navigator.geolocation.getCurrentPosition(function(position) {
                             var pos = {
@@ -81,10 +80,6 @@
                         title: 'Your location'
                     });
                     
-                    
-                    //infoWindowUser.setPosition(pos);
-                    //infoWindowUser.setContent('Your Location');
-                    //infoWindowUser.open(map);
                     
                     map.setZoom(13);
                     map.setCenter(pos);
@@ -103,7 +98,6 @@
               
         
               function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-                alert('error');
                 infoWindow.setPosition(pos);
                 infoWindow.setContent(browserHasGeolocation ?
                                       'Error: The Geolocation service failed.' :
@@ -114,24 +108,22 @@
                 loadMapData(map);
             }
         </script>
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR GOOGLE MAPS API KEY&callback=initMap">
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8OtHsqDm-Xi4aOMcTh90M58PUY0zlJc8&callback=initMap">
         </script>
         <!--The script to interface with DB-->
         <script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script>
         <script>
             function loadMapData(map) {
-                document.getElementById('textarea').innerHTML += "getting user|"
-                AWS.config.update({
-                    region: "us-west-2",
-                    endpoint: 'dynamodb.us-west-2.amazonaws.com',
-                    // accessKeyId default can be used while using the downloadable version of DynamoDB. 
-                    // For security reasons, do not store AWS Credentials in your files. Use Amazon Cognito instead.
-                    accessKeyId: "INSERT KEY HERE",
-                    // secretAccessKey default can be used while using the downloadable version of DynamoDB. 
-                    // For security reasons, do not store AWS Credentials in your files. Use Amazon Cognito instead.
-                    // Temp measure to build test functionality
-                    secretAccessKey: "SECRET KEY"
+                document.getElementById('textarea').innerHTML += "getting user|";
+                
+                
+                // Initialize the Amazon Cognito credentials provider
+                AWS.config.region = 'us-west-2'; // Region
+                AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+                    IdentityPoolId: 'us-west-2:2ea6d792-bc4e-4546-8c9d-fd9fa1347beb',
                 });
+                
+                
                 var docClient = new AWS.DynamoDB.DocumentClient();
 
                 document.getElementById('textarea').innerHTML += "Scanning table." + "\n";
@@ -151,6 +143,7 @@
                 };
 
                 docClient.scan(params, onScan);
+                
 
                 function onScan(err, data) {
                     if (err) {

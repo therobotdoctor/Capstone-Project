@@ -16,13 +16,9 @@
     
     
     $sdk = new Aws\Sdk([
-        //'endpoint'   => 'dynamodb.us-west-2.amazonaws.com',
         'region'   => 'us-west-2',
         'version'  => 'latest',
-        'credentials' => [
-            'key'    => 'INSERT KEY HERE',
-            'secret' => 'SECRET KEY',
-        ],
+        'profile' => 'default',
     ]);
     
     

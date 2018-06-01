@@ -45,12 +45,10 @@
 <main>
     <?php
         $date = $_POST['dateToBook'];
-        //Need to formate date to dd.mm.yyyy deliniate on .
+        
         $_SESSION['bookingDetails'][1] = $date;
         
         $carID = $_SESSION['bookingDetails'][0];
-        
-        //echo $_SESSION['bookingDetails'][0].$_SESSION['bookingDetails'][1];
         
         require 'aws/aws.phar';
         
@@ -60,13 +58,9 @@
         use Aws\DynamoDb\Marshaler;
         
         $sdk = new Aws\Sdk([
-            //'endpoint'   => 'dynamodb.us-west-2.amazonaws.com',
             'region'   => 'us-west-2',
             'version'  => 'latest',
-            'credentials' => [
-                'key'    => 'INSERT KEY HERE',
-                'secret' => 'SECRET KEY',
-            ],
+            'profile' => 'default',
         ]);
         
         $dynamodb = $sdk->createDynamoDb();
@@ -105,8 +99,6 @@
                 foreach($result['Items'] as $i){
                     
                     $book = $marshaler->unmarshalItem($i);
-                    //print_r($book);
-                    
                     
                     $startTimes[] = $book['StartTime'];
                     $endTimes[] = $book['EndTime'];
@@ -120,12 +112,8 @@
                     break;
                 }
             }
-            //get all
-            //iterate through
-            //grab start to finish times
-            // build select
-            // pass details to confirm page
-            //confirm page injects into DB
+            
+            
         } catch (DynamoDbException $e) {
             echo "Unable to query:\n";
             echo $e->getMessage() . "\n";
@@ -173,18 +161,14 @@
         }
         
         
-        //print_r($validDisplayStartTimes);
-        
         //filter by elements in booking times
         $total = count($startTimes);
-        //print_r($endTimes);
         
         for($i = 0;$i<$total;$i++){
             $first = array_search($startTimes[$i], $validStartTimes);
             $last = array_search($endTimes[$i], $validEndTimes);
             
-            //echo ">>>".$last;
-        
+            
             for($j=$first;$j<=$last;$j++){
                 $validStartTimes[$j] = null;
                 $validDisplayStartTimes[$j] = null;
@@ -213,17 +197,13 @@
         
         //now for ending Times
         
-        //print_r($validDisplayStartTimes);
-        
-        //Maybe create second select using JS
-        //onselect build new option list, stopping on BOOKED value or EO array
+        //OnSelect build new option list, stopping on BOOKED value or EO array
         
         ?>
         
         <script type='text/javascript'>
             function buildEndSelect(){
                 //destroy select and rebuild
-                //except index 0?
                 
                 var mySelect = document.getElementById("endSelect");
                 var x = mySelect.length;
@@ -237,9 +217,9 @@
                 
                 var currentStartTime = document.getElementById("startSelect").value;
                 
-                //var mySelect = document.getElementById("endSelect");
                 var reachedEnd = 0;
                 
+                //rebuild select, only satrt once into valid time, end on booking or end of list
                 for (var i=0; i < jsEndArrayValue.length; i++){
                     if(jsEndArrayValue[i] > currentStartTime || reachedEnd == 1){
                         reachedEnd = 1;
@@ -260,26 +240,8 @@
                     }
                 }
                 
-                // from https://stackoverflow.com/questions/17001961/javascript-add-select-programmatically
-                /*
-                var myDiv = document.getElementById("myDiv");
+                //  https://stackoverflow.com/questions/17001961/javascript-add-select-programmatically
 
-                //Create array of options to be added
-                var array = ["Volvo","Saab","Mercades","Audi"];
-                
-                //Create and append select list
-                var selectList = document.createElement("select");
-                selectList.id = "mySelect";
-                myDiv.appendChild(selectList);
-                
-                //Create and append the options
-                for (var i = 0; i < array.length; i++) {
-                    var option = document.createElement("option");
-                    option.value = array[i];
-                    option.text = array[i];
-                    selectList.appendChild(option);
-                }
-                */
 
             }
         </script>
@@ -287,21 +249,11 @@
         <?php
         //using JSON to share array with JS
         
-        //to work on
-        
         echo'<p style="margin: 0 auto; text-align:center;">End Time:</p>
         <select required name="end" id="endSelect">
             
             <option value="" selected disabled hidden>Select Finish Time</option>';
-            /*print array
-            for($i=0;$i<count($validEndTimes);$i++){
-                if($validEndTimes[$i] != null){
-                    echo '<option value="'.$validEndTimes[$i].'">'.$validDisplayEndTimes[$i].'</option>';
-                }
-                else{
-                    echo '<option value="'.$validEndTimes[$i].'"disabled >BOOKED</option>';
-                }
-            }*/
+            
         echo '</select>
         <button type="submit">Review</button>
         </form>
@@ -309,49 +261,7 @@
                     
 
     ?>
-<!--
-<div class="time-container">    
-    <p style="text-align:left;">Start Time:</p>
-    <form style="width: 20%;" action="/action_page.php">
-        <select name="cars">
-          <option value="time">10:00 AM</option>
-          <option value="time">10:30 AM</option>
-          <option value="time">11:00 AM</option>
-          <option value="time">11.30 AM</option>
-          <option value="time">12:00 PM</option>
-          <option value="time">12:30 PM</option>
-          <option value="time">01:00 PM</option>
-          <option value="time">01.30 PM</option>
-          <option value="time">02:00 PM</option>
-          <option value="time">02:30 PM</option>
-          <option value="time">03:00 PM</option>
-          <option value="time">03.30 PM</option>
-          <option value="time">04:00 PM</option>
-          <option value="time">04:30 PM</option>
-          <option value="time">05:00 PM</option>
-        </select>
-    <p style="text-align:left;">End Time:</p>
-        <select name="cars">
-          <option value="time">10:00 AM</option>
-          <option value="time">10:30 AM</option>
-          <option value="time">11:00 AM</option>
-          <option value="time">11.30 AM</option>
-          <option value="time">12:00 PM</option>
-          <option value="time">12:30 PM</option>
-          <option value="time">01:00 PM</option>
-          <option value="time">01.30 PM</option>
-          <option value="time">02:00 PM</option>
-          <option value="time">02:30 PM</option>
-          <option value="time">03:00 PM</option>
-          <option value="time">03.30 PM</option>
-          <option value="time">04:00 PM</option>
-          <option value="time">04:30 PM</option>
-          <option value="time">05:00 PM</option>
-        </select>
-    <input type="submit" value="Submit">
-</form>
-</div>
--->
+
 </main>
 
 

@@ -93,9 +93,7 @@
     ?>
     
     
-    <!--<form style="margin: 0 auto; width:20%;" action="makeBooking.php">
-        <button type="submit" value="CONFIRM">CONFIRM</button>
-    </form>-->
+    
     <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
         
         <!--PayPal Variables -->

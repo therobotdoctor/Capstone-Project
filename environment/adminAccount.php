@@ -14,13 +14,9 @@
     use Aws\DynamoDb\Marshaler;
     
     $sdk = new Aws\Sdk([
-        //'endpoint'   => 'dynamodb.us-west-2.amazonaws.com',
         'region'   => 'us-west-2',
         'version'  => 'latest',
-        'credentials' => [
-            'key'    => 'INSERT KEY HERE',
-            'secret' => 'SECRET KEY',
-        ],
+        'profile' => 'default',
     ]);
     
     
@@ -182,14 +178,6 @@
                         echo $e->getMessage() . "\n";
                     }
                     
-                    //need to be able to view cars
-                    
-                    
-                    //need to be able to add cars
-                    
-                    
-                    //need to be able to remove cars
-                    // remove via car ID
                     
                 ?>
                 </p>
@@ -210,27 +198,12 @@
                             <option value="luxury">Luxury</option>
                         </select>
                         Car Location
-                        <!--
-                        <input type="radio" name="locationSelect" onChange="displayLatLong()" value="manually">Enter Lat/Long
-                        <input type="radio" name="locationSelect" onChange="displayGMap()" value="map">By Map<br/>
-                        -->
+                       
                         <div id="inputLatLong">
                             Enter Latitude : <input type="text" id="CarLat" name="CarLat" required>
                             Enter Longitude : <input type="text" id="CarLong" name="CarLong" required>
                         </div>
-                        <!-- Map for entering lat/long if I can work out how to retrive value
-                        <div id="map" ></div>
-                        <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR GOOGLE MAPS API KEY&callback=initMap"></script>
-                        <script type="text/javascript">
-                        function initMap() {
-                            var rmit = { lat: -37.807, lng: 144.963 };
-                            var map = new google.maps.Map(document.getElementById('map'), {
-                                zoom: 10,
-                                center: rmit
-                            });
-                        }
-                        </script>
-                        -->
+                        
                         <button type="submit">Add Car</button>
     
                     </form>

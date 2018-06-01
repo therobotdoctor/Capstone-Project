@@ -10,13 +10,9 @@
     use Aws\DynamoDb\Marshaler;
     
     $sdk = new Aws\Sdk([
-    //'endpoint'   => 'dynamodb.us-west-2.amazonaws.com',
     'region'   => 'us-west-2',
     'version'  => 'latest',
-    'credentials' => [
-        'key'    => 'INSERT KEY HERE',
-        'secret' => 'SECRET KEY',
-    ],
+    'profile' => 'default',
     ]);
     
     
@@ -24,9 +20,7 @@
     $marshaler = new Marshaler();
     
     $userToRemove = $_POST['userToRemove'];
-    //echo $userToRemove;
-    //echo "test";
-    //die();
+    
     $tableName = 'Users';
     
     $key = $marshaler->marshalJson('

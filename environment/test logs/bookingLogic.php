@@ -2,8 +2,8 @@
 
     require 'aws/aws.phar';
     
-    putenv("AWS_ACCESS_KEY_ID=INSERT KEY HERE");
-    putenv("AWS_SECRET_ACCESS_KEY=SECRET KEY");
+    putenv("AWS_ACCESS_KEY_ID=AKIAI75QJ5VOK6FO66AQ");
+    putenv("AWS_SECRET_ACCESS_KEY=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");
     
     
     date_default_timezone_set('UTC');
@@ -15,10 +15,7 @@
         //'endpoint'   => 'dynamodb.us-west-2.amazonaws.com',
         'region'   => 'us-west-2',
         'version'  => 'latest',
-        'credentials' => [
-            'key'    => 'INSERT KEY HERE',
-            'secret' => 'SECRET KEY',
-        ],
+        'profile' => 'default',
     ]);
     
     

@@ -56,8 +56,7 @@ if payment successful, it should direct them to 'makeBooking.php' where booking 
         <input type="hidden" name="quantity" value='<? php echo $totalTime; ?>'/>
         <input type="hidden" name="item_name" value='<? php echo $carName; ?>'/>
         <input type="hidden" name="amount" value='<? php echo $totalCost; ?>'>
-        <!--<input type="hidden" name="return" value="PAGE_TO_REDIRECT_AFTER_PAYMENT">-->
-      
+        
         <input type="hidden" name="currency_code" value="AUD">
         <input type="image" src="https://www.sandbox.paypal.com/en_AU/i/btn/btn_paynow_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
         <img alt="" border="0" src="https://www.sandbox.paypal.com/en_AU/i/scr/pixel.gif" width="1" height="1">
@@ -77,46 +76,7 @@ if payment successful, it should direct them to 'makeBooking.php' where booking 
     
         <?php include('register.php'); ?>
 
-<!-- The Modal (contains the Sign Up form) 
-<div id="id01" class="modal">
-    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">X</span>
-    <form class="modal-content" action="RegisterComplete.php" method="POST">
-        <div class="container">
-            <h1 align='center'>Registration</h1>
-            <p align='center'>Please fill in this form to create an account.</p>
-            <hr>
-            <label for="email"><b>Email</b></label>
-            <input type="text" placeholder="Enter Email" name="email" required>
-
-            <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
-
-            <label for="psw-repeat"><b>Repeat Password</b></label>
-            <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-
-            <label>
-        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-                </label>
-            <hr>
-
-            <p style="font-size:12px">By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
-
-            <div class="clearfix">
-                
-                
-                    
-                <button type="submit" onclick="Myhash()" name="submit" id="submit" class="signup" >Sign Up</button>
-                
-                
-                
-                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-            </div>
-        </div>
-        
-    </form>
-    
-</div>
--->
+<!-- The Modal (contains the Sign Up form) -->
 
 <!-- The Modal (contains the Sign In Form -->
 

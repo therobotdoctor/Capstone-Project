@@ -10,13 +10,9 @@
     use Aws\DynamoDb\Marshaler;
     
     $sdk = new Aws\Sdk([
-    //'endpoint'   => 'dynamodb.us-west-2.amazonaws.com',
     'region'   => 'us-west-2',
     'version'  => 'latest',
-    'credentials' => [
-        'key'    => 'INSERT KEY HERE',
-        'secret' => 'SECRET KEY',
-    ],
+    'profile' => 'default',
     ]);
     
     
@@ -24,9 +20,7 @@
     $marshaler = new Marshaler();
     
     $CarToRemove = $_POST['CarToRemove'];
-    //echo $userToRemove;
-    //echo "test";
-    //die();
+    
     $tableName = 'Cars';
     
     $key = $marshaler->marshalJson('
