@@ -1,6 +1,7 @@
 <?php
     session_start();
     if(!(isset($_SESSION['user']))){
+        echo "<script type=\"text/javascript\">alert(\"You must Login to access your account page\")</script>";
         echo '<meta http-equiv="refresh" content="0;url=index.php">';
         die();
     }
@@ -10,41 +11,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="description" content="RideOn Main Homepage">
-    <meta name="keywords" content="Homepage">
-
-    <title>RideOn Car Share</title>
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    
-
-    <div>
-        <div id="logo-banner">
-            <a href="index.php">
-        <img id="logo" src="img/Logo v1.png" alt="RideOn Logo">
-        </a>
-        </div>
-    </div>
-
-
-    <!--- main nav--->
-    <div id="header" class="main_navigation">
-        <?php include 'navmenu.php'; ?>
-        <div id="btnreg" class="btn">
-                    <button class="bttn-material-flat bttn-md bttn-primary" onclick="document.getElementById('id01').style.display='block'">Register</button>
-                </div>
-                <div id="btnsign">
-                    <button class="bttn-material-flat bttn-md bttn-primary" onclick="document.getElementById('id02').style.display='block'">Sign In</button>
-                </div>
-    </div>
-    
-    <!--- end of main nav--->
-
-    <!-- Place Picture of Cars as Header Banner -->
-    <div id="cars-banner">
-        <img id="cars" src="img/cars_banners.png" alt="RideOn Logo">
-    </div>
+    <?php include('fullHeader.php');?>
 </head>
 
 
@@ -78,13 +45,58 @@
                         function initMap() {
                             var rmit = { lat: -37.807, lng: 144.963 };
                             var map = new google.maps.Map(document.getElementById('map'), {
-                                zoom: 15,
-                                center: rmit
+                               
                             });
+                            // try centre on users location
+                            //https://developers.google.com/maps/documentation/javascript/examples/map-geolocation
+                            markerUser = new google.maps.Marker;
+                            infoWindowUser = new google.maps.InfoWindow;
+                      
+                            //try obtain users location, will not work without permission
+                            if (navigator.geolocation) {
+                                    navigator.geolocation.getCurrentPosition(function(position) {
+                                        var pos = {
+                                        lat: position.coords.latitude,
+                                        lng: position.coords.longitude
+                                    };
+                                
+                                //alert(pos);
+                                markerUser = new google.maps.Marker({
+                                    position : pos,
+                                    map: map,
+                                    icon: 'img/location.png',
+                                    title: 'Your location'
+                                });
+                                
+                                
+                                map.setZoom(13);
+                                map.setCenter(pos);
+                                
+                                
+                                }, function() {
+                                    handleLocationError(true, infoWindowUser, map.getCenter());
+                            });
+                              
+                            } else {
+                              // Browser doesn't support Geolocation
+                              
+                              handleLocationError(false, infoWindowUser, map.getCenter());
+                            }
+                            
+                          
+                    
+                          function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+                            infoWindow.setPosition(pos);
+                            infoWindow.setContent(browserHasGeolocation ?
+                                                  'Error: The Geolocation service failed.' :
+                                                  'Error: Your browser doesn\'t support geolocation.');
+                            infoWindow.open(map);
+                            
+                          }
                             loadMapData(map);
                         }
                     </script>
-                    <script async defer src="https://maps.googleapis.com/maps/api/js?key=[YOUR GOOGLE MAPS KEY HERE]&callback=initMap">
+                    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8OtHsqDm-[YOUR GOOGLE MAPS API KEY]&callback=initMap">
                     </script>
                     <!-----The script to interface with DB------->
                     <script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script>
@@ -126,8 +138,9 @@
                                     // Print
                                     document.getElementById('textarea').innerHTML += "Scan succeeded. " + "\n";
                                     data.Items.forEach(function(car) {
+                                        if(car.Lat != null){
                                         document.getElementById('textarea').innerHTML += car.CarID + ": Lat " + car.Lat + " - Long " + car.Long + "\n";
-                                        var markerTemp = { lat: car.Lat, lng: car.Long };
+                                        var markerTemp = { lat: (car.Lat * 1), lng: (car.Long * 1)};
                                         var marker = new google.maps.Marker({
                                             position: markerTemp,
                                             map: map
@@ -157,7 +170,7 @@
                                         marker.addListener('click', function() {
                                             infowindow.open(map, marker);
                                         });
-                                    });
+                                    }});
                                     
             
                                     // Continue scanning if we have more movies (per scan 1MB limitation)
@@ -283,12 +296,12 @@
     </main>
     <!-- Button to open the modal -->
 
-    <?php include('register.php'); ?>
+    
     
     <!-- The Modal (contains the Sign Up form)-->
     
     
-    <?php include('login.php'); ?>
+    
     
     <!-- The Modal (contains the Sign In Form-->
 

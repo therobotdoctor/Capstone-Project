@@ -1,46 +1,9 @@
 <?php
     session_start();
-    $_SESSION = array();
-    session_destroy();
 ?>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="description" content="RideOn Main Homepage">
-    <meta name="keywords" content="Homepage">
-
-    <title>RideOn Car Share</title>
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-
-    <div>
-        <div id="logo-banner">
-            <a href="index.php">
-        <img id="logo" src="img/Logo v1.png" alt="RideOn Logo">
-        </a>
-        </div>
-    </div>
-    
-<!-- Main Navigation -->
-
-    <div id="header" class="main_navigation">
-        <?php include 'navmenu.php'; ?>
-        
-        <div id="btnreg" class="btn">
-                    <button class="bttn-material-flat bttn-md bttn-primary" onclick="document.getElementById('id01').style.display='block'">Register</button>
-                </div>
-                <div id="btnsign">
-                    <button class="bttn-material-flat bttn-md bttn-primary" onclick="document.getElementById('id02').style.display='block'">Sign In</button>
-                </div>
-    </div>
-
-    
-    <!--- end of main nav--->
-
-    <!-- Place Picture of Cars as Header Banner -->
-    <div id="cars-banner">
-        <img id="cars" src="img/cars_banners.png" alt="RideOn Logo">
-    </div>
+    <?php include('fullHeader.php');?>
 </head>
 
 <body>
@@ -108,7 +71,7 @@
                 loadMapData(map);
             }
         </script>
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=[YOUR GOOGLE MAPS KEY HERE]&callback=initMap">
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8OtHsqDm-[YOUR GOOGLE MAPS API KEY]&callback=initMap">
         </script>
         <!--The script to interface with DB-->
         <script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script>
@@ -172,7 +135,7 @@
                           '<br/>Model: '+car.Model+
                           '<br/>Colur: '+car.Colour+
                           '</p>'+
-                          '<p><button onclick="document.getElementById(\'id02\').style.display=\'block\'\">Sign In</button></p>'+
+                          '<p>Book from your account page</p>'+
                           '</div>'+
                           '</div>';
                     
@@ -213,15 +176,6 @@
 
 </body>
 
-<!-- Button to open the modal -->
-
-    
-        <?php include('register.php'); ?>
-
-
-<!-- The Modal (contains the Sign In Form -->
-
-    <?php include('login.php'); ?>
 
 
 <div id="footer" class="main_footer_navigation">
