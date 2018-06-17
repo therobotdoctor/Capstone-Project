@@ -4,41 +4,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="description" content="RideOn Main Homepage">
-    <meta name="keywords" content="Homepage">
-
-    <title>RideOn Car Share</title>
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    
-
-    <div>
-        <div id="logo-banner">
-            <a href="index.php">
-        <img id="logo" src="img/Logo v1.png" alt="RideOn Logo">
-        </a>
-        </div>
-    </div>
-
-
-    <!--- main nav--->
-    <div id="header" class="main_navigation">
-        <?php include 'navmenu.php'; ?>
-        <div id="btnreg" class="btn">
-                    <button class="bttn-material-flat bttn-md bttn-primary" onclick="document.getElementById('id01').style.display='block'">Register</button>
-                </div>
-                <div id="btnsign">
-                    <button class="bttn-material-flat bttn-md bttn-primary" onclick="document.getElementById('id02').style.display='block'">Sign In</button>
-                </div>
-    </div>
-    
-    <!--- end of main nav--->
-
-    <!-- Place Picture of Cars as Header Banner -->
-    <div id="cars-banner">
-        <img id="cars" src="img/cars_banners.png" alt="RideOn Logo">
-    </div>
+    <?php include('fullHeader.php');?>
 </head>
 <main>
     <div> 
@@ -104,7 +70,7 @@
         <input type="hidden" name="quantity_x" value="<?php echo $totalTime; ?>"/>
         <input type="hidden" name="item_name" value="Selected Car"/>
         <input type="hidden" name="amount" value= "<?php echo $totalCost; ?>">
-        <input type="hidden" name="return" value="https://aa19114af4a04984afeb9ba9c5452ab0.vfs.cloud9.us-west-2.amazonaws.com/makeBooking.php">
+        <input type="hidden" name="return" value="https://[YOUR WEBSITE ADDRESS]/makeBooking.php">
       
         <input type="hidden" name="currency_code" value="AUD">
         <button type="submit" value="CONFIRM">PAY (via PayPal)</button>
